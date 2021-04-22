@@ -1,0 +1,34 @@
+AddHandler smooth-streaming.extensions .ism .isml
+
+ServerName unified-origin
+
+<Location />
+  UspHandleIsm on
+  UspEnableSubreq on
+</Location>
+
+UspLicenseKey /etc/usp-license.key
+
+LogFormat {{LOG_FORMAT}} log_format
+
+<VirtualHost *:80>
+  CustomLog /dev/stdout log_format
+  ErrorLog /dev/stderr
+
+  LogLevel {{LOG_LEVEL}}
+
+  AddHandler smooth-streaming.extensions .ism .isml .mp4
+  SSLProxyEngine on
+
+  DocumentRoot /var/www/unified-origin
+
+  Header set Access-Control-Allow-Headers "origin, range"
+  Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Expose-Headers "Server,range"
+
+</VirtualHost>
+
+<Directory /var/www/unified-origin>
+  Require all granted
+</Directory>

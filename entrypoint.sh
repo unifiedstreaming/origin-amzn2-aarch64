@@ -63,5 +63,3 @@ if [ "${1#-}" != "$1" ]; then
 fi
 
 exec "$@"
-
-#exec tail -f /dev/null & wait && exit 0

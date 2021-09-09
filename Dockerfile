@@ -16,7 +16,7 @@ RUN yum install -y \
     mod_unified_s3_auth \
     manifest-edit \
     python3 \
-    py3-pip \
+    python3-pip \
 &&  pip3 install \
     pyyaml==5.3.1 \
     schema==0.7.3 

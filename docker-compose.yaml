@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  vod-origin:
+    build: .
+    volumes:
+      - ~/:/var/www/unified-origin
+    ports:
+      - 80:80
+    environment:
+      - LOG_LEVEL=debug
+      - USP_LICENSE_KEY=$USP_LICENSE_KEY
+      - REMOTE_STORAGE_URL=http://usp-s3-storage.s3.eu-central-1.amazonaws.com/
+      - REMOTE_PATH=usp-s3-storage
+    healthcheck:
+      test: kill -0 1
+      interval: 2s
+      timeout: 5s
+      retries: 30

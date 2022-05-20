@@ -1,5 +1,7 @@
 ![logo](https://raw.githubusercontent.com/unifiedstreaming/origin/master/unifiedstreaming-logo-black.png)
 
+:warning: This is a temporary project to build and run Unified Streaming software on M1/Arm Macs with Docker
+
 What is Unified Origin?
 -----------------------
 Unified Origin offers one solution for just-in-time packaging to MPEG-DASH, Apple (HLS), Adobe (HDS) and Microsoft (MSS). Our added features include content protection, restart TV, time-shift, catchup-TV, subtitles, and multiple language and audio tracks.

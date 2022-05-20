@@ -14,6 +14,7 @@ RUN yum install -y \
     mp4split \
     mod_smooth_streaming \
     mod_unified_s3_auth \
+    mod_unified_remix \
     manifest-edit \
     python3 \
     python3-pip \
